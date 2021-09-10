@@ -1,0 +1,14 @@
+In this assignment you have to write a little program in a file called nlcnt.c and
+two library functions. The two library functions should have the same name my_cnt but
+be in two different .c files: mapping.c and reading.c. They count the (non-newline) characters in a file, accept one argument which is a null terminated string representing a file name and return an integer. The .c files will be compiled to shared objects
+mapping.so and reading.so respectively and nlcnt.c should be compiled as a
+stand alone program called nlcnt.
+Program nlcnt should accept two command line arguments. The first has to be either the word reading or the word mapping or any leading substring. The second argument will be the string argument for the function my_cnt. After parsing the command
+line arguments, your program should dlopen the corresponding shared object, dlsym
+the function, invoke it with the proper argument and print the result.
+The two versions of function my_cnt both count the number of characters in the
+file excluding the new lines. The one in file mapping.so does it by mmaping the file to
+memory and operating on the resulting array and the one in file reading.so does it by
+reading multiple pagesize chuncks and counting the new-lines in them. The pagesize
+should be determined through a system call (sysconf).
+You hav e to hand in the three .c files and the Makefile with at least an all target that compiles everything and a clean target that removes all the useless files.
