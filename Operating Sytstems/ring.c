@@ -63,7 +63,6 @@ int main(int argc, char *argv[])
 
 void forkProcesses(int ni, int leader, int cnt)
 { 
-  //printf("n is %d, pid is %d, leader pid is %d\n", ni, getpid(), leader);
   //decrements the next "n" to be passed to exec
   ni = ni - 1;
 
@@ -118,16 +117,10 @@ void wakeup()
     //sleep(1);
     cnt = cnt -1;
     if(child == 0){
-     /* printf("\n");
-       printf("I'm the last child with pid %d Waking up leader with pid %d\n", getpid(),leader);
-       printf("\n");*/
-      errorCheck(kill(leader, SIGUSR1));
+    errorCheck(kill(leader, SIGUSR1));
       
     }else{
-      /*printf("\n");
-      printf("I'm the parent with pid %d Waking up child with pid %d\n", getpid(),child);
-      printf("\n");*/
-      errorCheck(kill(child,SIGUSR1));
+     errorCheck(kill(child,SIGUSR1));
     }
   }else{
     //when cnt is 0 the leader exits first but it must call the next child so the next child can call the next child... etc until they all exit.
