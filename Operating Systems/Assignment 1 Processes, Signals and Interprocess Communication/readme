@@ -1,3 +1,5 @@
+C Language
+
 A Program for Performance Evaluation of Signals
 You will write a simple program called ring that creates a ring of N processes that
 send a signal round and round cnt times. The program is invoked with
