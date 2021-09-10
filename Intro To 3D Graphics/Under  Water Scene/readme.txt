@@ -1,3 +1,5 @@
+HTML/JavaScript
+
 Using WebGl to create a 3D underwater scene with these deliverables:
 
 (a) You have to use real time to synchronize your animations. (2 Marks)
