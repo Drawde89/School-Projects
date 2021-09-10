@@ -1,2 +1,4 @@
+HTML/Javascript
+
 The purpose of this assignment is to implement camera functionality in the scene. Create custom shaders to allow
 textures to be added to the geometry. Also the geometry must have some form of interaction with each other. 
