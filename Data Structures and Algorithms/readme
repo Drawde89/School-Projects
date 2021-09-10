@@ -1,5 +1,7 @@
 Graph traversal based on airports and their distances from each other. The Deliverables are as follows:
 
+Tester.java has main() in it. 
+
 Part 1
 Create generic data structure(s) for storing graphs using the adjacency list structure. The vertices will
 store objects of generic type V and the edges store objects of generic type E. The entries should be
