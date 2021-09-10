@@ -1,0 +1,16 @@
+A Program for Performance Evaluation of Signals
+You will write a simple program called ring that creates a ring of N processes that
+send a signal round and round cnt times. The program is invoked with
+./ring N leader cnt
+where leader is 0 when you first invoke it. The program works as follows. If the leader
+parameter is 0 then it knows it is the leader. It then creates (with fork-exec)achild
+process that has parameters
+N-1 leader cnt
+where now leader is the PID of the true leader process. The child then will create another child process with parameters
+N-2 leader cnt
+where now leader is again the PID of the true leader process. The process that eventually is created with N=1 is the last one and it does not create another child. Instead sends
+a SIGUSR1 to the leader to start everything. All the process suspend themselves waiting
+for a SIGUSR1 and then send a SIGUSR1 to the next one. At the end of the execution
+the leader (only) prints the cnt and the true time elapsed since the beginning of execution as a floating point number. Also write a script ring_time.sh using a for loop
+that runs the ring program for N=20 processes and for cnt10, 100, 1000 and 10000 signals and writes the results in the file timing.out. The format of the file timing.out is the results of one run per line and each line contains the cnt and the time it
+took.
