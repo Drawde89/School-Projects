@@ -2,7 +2,7 @@ Java Programming Language
 
 Graph traversal based on airports and their distances from each other. The Deliverables are as follows:
 
-Tester.java has main() in it. 
+Controller.java takes the user input.
 
 Part 1
 Create generic data structure(s) for storing graphs using the adjacency list structure. The vertices will
